@@ -1,12 +1,14 @@
-<h1>Create a new cocktail</h1>
+<div class="container">
+  <h1>Create a new cocktail</h1>
 
-<p>Add a name</p>
+  <p>Add a name</p>
 
-<%= simple_form_for([@cocktail]) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for([@cocktail]) do |f| %>
+    <%= f.input :name %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
 
 
 
-<%= link_to "Back to all cocktails", cocktails_path %>
+  <%= link_to "Back to all cocktails", cocktails_path %>
+</div>
