@@ -1,35 +1,23 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url "bar.jpg" %>);">
   <div class="container">
     <h1>The Fancy Schmancy Cocktail Club</h1>
     <p>Explore life-changing cocktail recipes from your favourite bars around the world </p>
-    <a class="btn btn-flat" href="#"><%= link_to "Add Cocktail", new_cocktail_path%></a>
+    <a class="btn btn-ghost" <%= link_to "Add Cocktail", new_cocktail_path %> </a>
   </div>
 </div>
 
 <div class="container">
   <h1>All Cocktails</h1>
-    <ul>
-      <% @cocktails.each do |cocktail| %>
-        <li>
-         <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        </li>
-      <% end %>
-    </ul>
-</div>
-
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
+  <div class="cards" class="card" >
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-cocktail" >
+        <img src="..." class="card-img-top" alt="...">
+        <h5 class="card-title" ><%= cocktail.name %></h5>
+        <a class="btn btn-primary"<%= link_to "Recipe", cocktail_path(cocktail) %></a>
+      </div>
+    <% end %>
   </div>
 </div>
+
+
+
