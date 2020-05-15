@@ -1,0 +1,53 @@
+
+#container-show {
+  background-color: #faf3dd;
+  animation: pulse 5s infinite;
+
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #b5838d;
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}
+
+
+
+.recipe {
+  margin: 32px  16px 16px 16px;
+}
+
+.big-container {
+  display: flex;
+}
+
+.title {
+  margin: 16px 0;
+  color: white;
+}
+
+.ingredients {
+  display: flex;
+
+}
+
+
+.tag {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 16px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+

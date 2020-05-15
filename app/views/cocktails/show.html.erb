@@ -1,16 +1,29 @@
-<div class="container">
+<div class="big-container">
+<div class="container" id="container-show">
 
-  <h1><%= @cocktail.name %></h1>
-
-  <p><% @cocktail.doses.each do |dose| %></p>
-    <p><%= dose.description %></p>
-    <p><%= dose.ingredient.name %></p>
-    <%= link_to dose_path(dose), method: :delete do %>
-    <p>remove</p>
+  <div class="recipe">
+    <h1 class="title"><%= @cocktail.name %></h1>
+    <%= cl_image_tag @cocktail.photo.key, alt: "cocktailpic", width: 300, height: 300, crop: :fill %>
+    <p><% @cocktail.doses.each do |dose| %></p>
+      <div class="ingredients">
+        <p class="tag"><%= dose.description %> </p>
+        <p class="tag"><%= dose.ingredient.name %> </p>
+      </div>
     <% end %>
-  <% end %>
+    <div class="links">
+      <%= link_to "Add a Dose",  new_cocktail_dose_path(@cocktail) %>
+      <%= link_to "Back to all Cocktails",  cocktails_path %>
+      <%= link_to cocktail_path(@cocktail), method: :delete do %>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  </div>
 
-  <%= link_to "Add a Dose",  new_cocktail_dose_path(@cocktail) %>
-  <%= link_to "Back to all Cocktails",  cocktails_path %>
 </div>
+<div class="right-image">
+    <%= image_tag "cocktail.jpg", alt: "alttext", width: 800 %>
+</div>
+</div>
+
+
 
